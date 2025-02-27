@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "format": "npx prettier --write --list-different --ignore-unknown",
     "lint": "npx eslint src/**/*.ts",
+    "lint:css": "npx stylelint --fix src/**/*.scss",
     "prepare": "husky"
   },
   "devDependencies": {
