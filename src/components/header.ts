@@ -1,6 +1,6 @@
 import createElement from '../create/create_element';
 
-function createHeader() {
+function createHeader(): HTMLElement {
   const header: HTMLElement = createElement({ tag: 'header', classes: ['header'] });
   const wrapper: HTMLElement = createElement({
     tag: 'div',
