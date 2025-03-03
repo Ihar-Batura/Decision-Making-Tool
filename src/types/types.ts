@@ -6,7 +6,7 @@ export interface ICreateElement {
   parent?: HTMLElement;
 }
 
-interface IOption {
+export interface IOption {
   id: string;
   title: string;
   weight: string;
@@ -21,6 +21,7 @@ export interface ICreateInput {
   type: string;
   classes?: string[];
   id?: string;
+  value?: string;
   title?: string;
   required?: string;
   placeholder?: string;
@@ -29,4 +30,9 @@ export interface ICreateInput {
   addRules?: string;
   onInput?: () => void;
   parent?: HTMLElement;
+}
+
+export interface ICreateButton extends ICreateElement {
+  disabled?: boolean;
+  onClick?: () => void;
 }
