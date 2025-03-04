@@ -1,11 +1,13 @@
 import addNewOption from '../work_with_options/add_new_option';
-import cleanMainWrapper from '../clean_element_or_page/clean_main_wrapper';
-import addListOfOptionsAndButtons from '../work_with_page_elements/add_list_of_options_and_buttons';
+import cleanMain from '../clean_element_or_page/clean_main';
+import createPageListOfOptions from '../../pages/page_list_of_options';
+import { main } from '../../main';
 
 function clickBtnAddOption(): void {
   addNewOption();
-  cleanMainWrapper();
-  addListOfOptionsAndButtons();
+  cleanMain();
+  const pageListOfOptions: HTMLElement = createPageListOfOptions();
+  main.append(pageListOfOptions);
 }
 
 export default clickBtnAddOption;
