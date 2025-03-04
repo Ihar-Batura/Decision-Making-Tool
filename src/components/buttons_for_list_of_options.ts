@@ -1,5 +1,7 @@
 import createElement from '../create/create_element';
 import createButton from '../create/create_button';
+import clickBtnAddOption from '../functional/click_button.ts/click_btn_add_option';
+import clickBtnClearList from '../functional/click_button.ts/click_btn_clear_list';
 
 function createButtonsForListOfOptions(): HTMLElement {
   const btnsContainer: HTMLElement = createElement({
@@ -10,7 +12,7 @@ function createButtonsForListOfOptions(): HTMLElement {
   createButton({
     classes: ['btn', 'btn-add-option'],
     text: 'Add Option',
-    onClick: () => console.log('add option'),
+    onClick: () => clickBtnAddOption(),
     parent: btnsContainer,
   });
 
@@ -24,7 +26,7 @@ function createButtonsForListOfOptions(): HTMLElement {
   createButton({
     classes: ['btn', 'btn-clear-list'],
     text: 'Clear list',
-    onClick: () => console.log('Clear list'),
+    onClick: () => clickBtnClearList(),
     parent: btnsContainer,
   });
 
