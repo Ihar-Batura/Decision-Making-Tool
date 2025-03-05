@@ -2,6 +2,8 @@ import createElement from '../create/create_element';
 import createButton from '../create/create_button';
 import clickBtnAddOption from '../functional/click_button.ts/click_btn_add_option';
 import clickBtnClearList from '../functional/click_button.ts/click_btn_clear_list';
+import clickBtnSaveList from '../functional/click_button.ts/click_btn_save_list';
+import clickBtnLoadListFromFile from '../functional/click_button.ts/click_btn_load_list_from_file';
 
 function createButtonsForListOfOptions(): HTMLElement {
   const btnsContainer: HTMLElement = createElement({
@@ -33,14 +35,14 @@ function createButtonsForListOfOptions(): HTMLElement {
   createButton({
     classes: ['btn', 'btn-save-list'],
     text: 'Save list to file',
-    onClick: () => console.log('Save list to file'),
+    onClick: () => clickBtnSaveList(),
     parent: btnsContainer,
   });
 
   createButton({
     classes: ['btn', 'btn-load-list'],
     text: 'Load list from file',
-    onClick: () => console.log('Load list from file'),
+    onClick: () => clickBtnLoadListFromFile(),
     parent: btnsContainer,
   });
 
