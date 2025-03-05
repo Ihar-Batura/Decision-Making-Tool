@@ -47,6 +47,7 @@ Title with number 1,5   -> | Title with number 1   | 5 |`;
   btnConfirm.addEventListener('click', function (e) {
     e.preventDefault();
     clickBtnConfirm(textField.value);
+    clickBtnCancel(dialogWindow); // Close modal window
   });
 
   dialogWindow.showModal;
