@@ -3,6 +3,7 @@ import createInput from '../create/create_input';
 import createButton from '../create/create_button';
 import { IOption } from '../types/types';
 import clickBtnDeleteOption from '../functional/click_button.ts/click_btn_delete_option';
+import saveEditOptionData from '../functional/work_with_options/save_edit_option_data';
 
 function createOption(options: IOption): HTMLElement {
   const { id, title, weight } = options;
@@ -19,6 +20,12 @@ function createOption(options: IOption): HTMLElement {
     classes: ['option-container-title'],
     value: title,
     placeholder: 'Title',
+    onInput: () =>
+      saveEditOptionData({
+        parent: elementId,
+        key: elementTitle.placeholder,
+        value: elementTitle.value,
+      }),
   });
 
   const elementWeight = createInput({
@@ -26,6 +33,12 @@ function createOption(options: IOption): HTMLElement {
     classes: ['option-container-weight'],
     value: weight,
     placeholder: 'Weight',
+    onInput: () =>
+      saveEditOptionData({
+        parent: elementId,
+        key: elementWeight.placeholder,
+        value: elementWeight.value,
+      }),
   });
 
   const elementButton = createButton({
