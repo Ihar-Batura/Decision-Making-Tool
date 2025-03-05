@@ -36,3 +36,9 @@ export interface ICreateButton extends ICreateElement {
   disabled?: boolean;
   onClick?: () => void;
 }
+
+export type TEditOptionData = {
+  parent: HTMLElement;
+  key: string;
+  value: string;
+};
