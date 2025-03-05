@@ -5,6 +5,7 @@ function createInput(options: ICreateInput): HTMLInputElement {
     type,
     classes = [],
     id,
+    value,
     title,
     required,
     placeholder,
@@ -23,6 +24,9 @@ function createInput(options: ICreateInput): HTMLInputElement {
   }
   if (id) {
     input.id = id;
+  }
+  if (value) {
+    input.value = value;
   }
   if (title) {
     input.setAttribute('title', title);
