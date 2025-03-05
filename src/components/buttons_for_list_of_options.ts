@@ -4,6 +4,7 @@ import clickBtnAddOption from '../functional/click_button.ts/click_btn_add_optio
 import clickBtnClearList from '../functional/click_button.ts/click_btn_clear_list';
 import clickBtnSaveList from '../functional/click_button.ts/click_btn_save_list';
 import clickBtnLoadListFromFile from '../functional/click_button.ts/click_btn_load_list_from_file';
+import clickBtnPasteList from '../functional/click_button.ts/click_btn_paste_list';
 
 function createButtonsForListOfOptions(): HTMLElement {
   const btnsContainer: HTMLElement = createElement({
@@ -21,7 +22,7 @@ function createButtonsForListOfOptions(): HTMLElement {
   createButton({
     classes: ['btn', 'btn-paste-list'],
     text: 'Paste list',
-    onClick: () => console.log('Paste list'),
+    onClick: () => clickBtnPasteList(),
     parent: btnsContainer,
   });
 
