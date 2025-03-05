@@ -11,7 +11,6 @@ function createListOfOptions(): HTMLElement {
   const options = getOptionsListFromLS();
 
   if (options !== null && options.list.length > 0) {
-    console.log(options.list.length);
     options.list.forEach((element) => {
       const elementOption: HTMLElement = createOption({
         id: element.id,
