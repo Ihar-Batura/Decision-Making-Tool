@@ -10,4 +10,5 @@
 @use 'layout/main' as *;
 @use 'layout/footer' as *;
 
-// @use 'components/buttons' as *;
+@use 'components/buttons' as *;
+@use 'components/option' as *;
