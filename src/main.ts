@@ -4,7 +4,7 @@ import createMain from './components/main';
 import createFooter from './components/footer';
 import createPageListOfOptions from './pages/page_list_of_options';
 
-const body: HTMLElement = document.body;
+export const body: HTMLElement = document.body;
 const header: HTMLElement = createHeader();
 export const main: HTMLElement = createMain();
 const pageListOfOptions: HTMLElement = createPageListOfOptions();
