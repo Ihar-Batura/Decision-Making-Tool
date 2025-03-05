@@ -2,6 +2,7 @@ import createElement from '../create/create_element';
 import createInput from '../create/create_input';
 import createButton from '../create/create_button';
 import { IOption } from '../types/types';
+import clickBtnDeleteOption from '../functional/click_button.ts/click_btn_delete_option';
 
 function createOption(options: IOption): HTMLElement {
   const { id, title, weight } = options;
@@ -9,28 +10,28 @@ function createOption(options: IOption): HTMLElement {
 
   const elementId: HTMLElement = createElement({
     tag: 'div',
-    classes: ['option-container__id'],
+    classes: ['option-container-id'],
     text: id,
   });
 
   const elementTitle = createInput({
     type: 'text',
-    classes: ['option-container__title'],
+    classes: ['option-container-title'],
     value: title,
     placeholder: 'Title',
   });
 
   const elementWeight = createInput({
-    type: 'text',
-    classes: ['option-container__weight'],
+    type: 'number',
+    classes: ['option-container-weight'],
     value: weight,
     placeholder: 'Weight',
   });
 
   const elementButton = createButton({
-    classes: ['btn', 'option-container__btn'],
+    classes: ['btn', 'option-container-btn'],
     text: 'Delete',
-    onClick: () => console.log('click'),
+    onClick: () => clickBtnDeleteOption(elementId),
   });
 
   optionContainer.append(elementId, elementTitle, elementWeight, elementButton);
