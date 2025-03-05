@@ -1,0 +1,41 @@
+@use '../abstracts/variables' as *;
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+.modal-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  max-width: 600px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+}
+
+dialog[open]::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  padding: 15px;
+  border-radius: 4px;
+
+  background-color: aqua;
+}
+
+.form-field {
+  width: 100%;
+  padding: 8px;
+  resize: none;
+  background-color: $color-bkg-input;
+}
