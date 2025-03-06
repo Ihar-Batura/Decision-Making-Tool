@@ -5,6 +5,7 @@ import clickBtnClearList from '../functional/click_button.ts/click_btn_clear_lis
 import clickBtnSaveList from '../functional/click_button.ts/click_btn_save_list';
 import clickBtnLoadListFromFile from '../functional/click_button.ts/click_btn_load_list_from_file';
 import clickBtnPasteList from '../functional/click_button.ts/click_btn_paste_list';
+import clickBtnGoToDecisionPicker from '../functional/click_button.ts/click_btn_go_to_DP';
 
 function createButtonsForListOfOptions(): HTMLElement {
   const btnsContainer: HTMLElement = createElement({
@@ -50,7 +51,7 @@ function createButtonsForListOfOptions(): HTMLElement {
   createButton({
     classes: ['btn', 'btn-go-to-decision-picker'],
     text: 'Go to Decision Picker',
-    onClick: () => console.log('Go to Decision Picker'),
+    onClick: () => clickBtnGoToDecisionPicker(),
     parent: btnsContainer,
   });
 
