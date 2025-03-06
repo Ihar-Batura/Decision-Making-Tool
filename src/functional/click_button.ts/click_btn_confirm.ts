@@ -12,7 +12,7 @@ function clickBtnConfirm(text: string): void {
     const arrFromEl: string[] = el.split(',');
 
     if (arrFromEl.length > 1) {
-      const elWeight = arrFromEl.at(-1)?.trim();
+      const elWeight = arrFromEl.at(-1);
 
       if (elWeight) {
         const titleLength: number = arrNewOptions[ind].length - elWeight.length - 1;
