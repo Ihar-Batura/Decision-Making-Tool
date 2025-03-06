@@ -32,6 +32,12 @@ function createModalWindowValidOptions(): HTMLDialogElement {
     clickBtnCancel(dialogWindow);
   });
 
+  document.addEventListener('keydown', (event: KeyboardEvent) => {
+    if (event.key === 'Escape') {
+      clickBtnCancel(dialogWindow);
+    }
+  });
+
   return dialogWindow;
 }
 
