@@ -19,10 +19,12 @@ body:has(dialog[open]) {
 }
 
 dialog[open]::backdrop {
-  background: rgba(0, 0, 0, 0.8);
+  opacity: 0.8;
+  background: $color-background;
 }
 
-.form {
+.form,
+.modal-valid-options-container {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
@@ -30,12 +32,18 @@ dialog[open]::backdrop {
   padding: 15px;
   border-radius: 4px;
 
-  background-color: aqua;
+  background-color: $color-bkg-modal;
 }
 
 .form-field {
+  resize: none;
   width: 100%;
   padding: 8px;
-  resize: none;
+  background-color: $color-bkg-input;
+}
+
+.modal-valid-options-message {
+  padding: 15px;
+  border-radius: 4px;
   background-color: $color-bkg-input;
 }
