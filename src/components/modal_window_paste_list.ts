@@ -50,6 +50,12 @@ Title with number 1,5   -> | Title with number 1   | 5 |`;
     clickBtnCancel(dialogWindow); // Close modal window
   });
 
+  document.addEventListener('keydown', (event: KeyboardEvent) => {
+    if (event.key === 'Escape') {
+      clickBtnCancel(dialogWindow);
+    }
+  });
+
   return dialogWindow;
 }
 
