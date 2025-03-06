@@ -38,6 +38,12 @@ function createModalWindowValidOptions(): HTMLDialogElement {
     }
   });
 
+  document.addEventListener('click', (event: MouseEvent) => {
+    if ((event.target as HTMLElement).classList.contains('modal-window')) {
+      clickBtnCancel(dialogWindow);
+    }
+  });
+
   return dialogWindow;
 }
 
