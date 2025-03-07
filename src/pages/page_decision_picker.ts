@@ -1,5 +1,6 @@
 import createElement from '../create/create_element';
 import createButtonsForDecisionPicker from '../components/buttons_for_decision_picker';
+import createWheel from '../components/wheel';
 
 function createPageDecisionPicker(): HTMLElement {
   const mainWrapper: HTMLElement = createElement({
@@ -8,8 +9,15 @@ function createPageDecisionPicker(): HTMLElement {
   });
 
   const btnsForDecisionPicker = createButtonsForDecisionPicker();
+  const option = createElement({
+    tag: 'div',
+    classes: ['picked-option'],
+    text: 'PRESS START BUTTON',
+  });
 
-  mainWrapper.append(btnsForDecisionPicker);
+  const wheel: HTMLCanvasElement = createWheel();
+
+  mainWrapper.append(btnsForDecisionPicker, option, wheel);
 
   return mainWrapper;
 }
