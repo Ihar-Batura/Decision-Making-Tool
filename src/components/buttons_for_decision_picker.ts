@@ -1,6 +1,8 @@
 import createElement from '../create/create_element';
 import createButton from '../create/create_button';
 import clickBtnBack from '../functional/click_button.ts/click_btn_back';
+import clickBtnSound from '../functional/click_button.ts/click_btn_sound';
+import checkSoundValueInLS from '../functional/local_storage/check_sound_value_in_LS';
 
 function createButtonsForDecisionPicker(): HTMLElement {
   const btnsContainer: HTMLElement = createElement({
@@ -10,7 +12,6 @@ function createButtonsForDecisionPicker(): HTMLElement {
 
   createButton({
     classes: ['btn', 'btn-back'],
-    text: 'back',
     onClick: () => clickBtnBack(),
     parent: btnsContainer,
   });
@@ -22,10 +23,11 @@ function createButtonsForDecisionPicker(): HTMLElement {
     parent: btnsContainer,
   });
 
-  createButton({
+  checkSoundValueInLS();
+
+  const btnSound = createButton({
     classes: ['btn', 'btn-sound'],
-    text: 'Sound',
-    onClick: () => console.log('click btn Sound'),
+    onClick: () => clickBtnSound(btnSound),
     parent: btnsContainer,
   });
 
