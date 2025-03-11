@@ -42,3 +42,7 @@ export type TEditOptionData = {
   key: string;
   value: string;
 };
+
+export interface ISound {
+  sound: boolean;
+}
