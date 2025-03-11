@@ -52,11 +52,25 @@
   margin-left: auto;
 }
 
-.btn-back,
-.btn-sound {
-  width: calc(30% - 6px);
+.btn-time {
+  width: calc(58% - 6px);
 }
 
-.btn-time {
-  width: calc(38% - 6px);
+.btn-back {
+  background: url('./back_icon.svg') no-repeat center center / contain;
+}
+
+.btn-sound {
+  background: url('./sound_on.svg') no-repeat center center / contain;
+
+  &.mute {
+    background: url('./sound_off.svg') no-repeat center center / contain;
+    background-color: $color-base;
+  }
+}
+
+.btn-back,
+.btn-sound {
+  width: calc(20% - 6px);
+  background-color: $color-base;
 }
