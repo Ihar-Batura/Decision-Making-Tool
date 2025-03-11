@@ -11,12 +11,20 @@ function createPageError(): HTMLElement {
   createElement({
     tag: 'div',
     classes: ['error-message'],
+    text: 'Oooops...',
+    parent: mainWrapper,
+  });
+
+  createElement({
+    tag: 'div',
+    classes: ['error-message'],
     text: 'Something went wrong',
     parent: mainWrapper,
   });
 
   createButton({
     classes: ['btn', 'btn-error'],
+    text: 'Back to main page',
     onClick: () => reloadMainOnPageListOfOptions(),
     parent: mainWrapper,
   });
