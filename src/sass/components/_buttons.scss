@@ -52,10 +52,6 @@
   margin-left: auto;
 }
 
-.btn-time {
-  width: calc(58% - 6px);
-}
-
 .btn-back {
   background: url('./back_icon.svg') no-repeat center center / contain;
 }
@@ -72,5 +68,6 @@
 .btn-back,
 .btn-sound {
   width: calc(20% - 6px);
+  height: 32px;
   background-color: $color-base;
 }
