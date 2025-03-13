@@ -5,7 +5,7 @@ import { IOptions, IOption } from '../types/types';
 import createOption from './option';
 
 function createListOfOptions(): HTMLElement {
-  const listOfOptions = createElement({ tag: 'div', classes: ['list-options'] });
+  const listOfOptions: HTMLElement = createElement({ tag: 'div', classes: ['list-options'] });
 
   checkOptionsInLS();
 
