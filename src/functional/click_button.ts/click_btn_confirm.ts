@@ -12,11 +12,11 @@ function clickBtnConfirm(text: string): void {
     const arrFromEl: string[] = el.split(',');
 
     if (arrFromEl.length > 1) {
-      const elWeight = arrFromEl.at(-1);
+      const elWeight: string | undefined = arrFromEl.at(-1);
 
       if (elWeight) {
         const titleLength: number = arrNewOptions[ind].length - elWeight.length - 1;
-        const elTitle = arrNewOptions[ind].slice(0, titleLength);
+        const elTitle: string = arrNewOptions[ind].slice(0, titleLength);
         addNewOption(elTitle, elWeight);
       }
     }
