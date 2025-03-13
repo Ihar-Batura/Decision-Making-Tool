@@ -10,6 +10,7 @@ function createInput(options: ICreateInput): HTMLInputElement {
     required,
     placeholder,
     minLength,
+    min,
     pattern,
     addRules,
     onInput,
@@ -39,6 +40,9 @@ function createInput(options: ICreateInput): HTMLInputElement {
   }
   if (minLength) {
     input.setAttribute('minlength', minLength);
+  }
+  if (min) {
+    input.setAttribute('min', min);
   }
   if (pattern) {
     input.setAttribute('pattern', pattern);
