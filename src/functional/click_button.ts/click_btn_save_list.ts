@@ -1,7 +1,8 @@
 import getOptionsListFromLS from '../local_storage/get_options_list_from_LS';
+import { IOptions } from '../../types/types';
 
 function clickBtnSaveList(): void {
-  const optionList = getOptionsListFromLS();
+  const optionList: IOptions | null = getOptionsListFromLS();
 
   if (optionList !== null) {
     const link: HTMLAnchorElement = document.createElement('a');
