@@ -3,22 +3,22 @@ import { ICreateTextAreaElement } from '../types/types';
 function createTextAreaElement(options: ICreateTextAreaElement): HTMLTextAreaElement {
   const { classes = [], id, row, parent } = options;
 
-  const element = document.createElement('textarea');
+  const textarea: HTMLTextAreaElement = document.createElement('textarea');
 
   if (classes.length > 0) {
-    element.classList.add(...classes);
+    textarea.classList.add(...classes);
   }
   if (id) {
-    element.id = id;
+    textarea.id = id;
   }
   if (row) {
-    element.setAttribute('row', row);
+    textarea.setAttribute('row', row);
   }
   if (parent != null) {
-    parent.append(element);
+    parent.append(textarea);
   }
 
-  return element;
+  return textarea;
 }
 
 export default createTextAreaElement;
