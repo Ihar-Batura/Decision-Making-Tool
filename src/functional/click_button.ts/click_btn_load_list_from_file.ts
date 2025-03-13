@@ -13,7 +13,7 @@ function clickBtnLoadListFromFile(): void {
       reader.readAsText(file);
 
       reader.onload = function () {
-        const optionList = reader.result;
+        const optionList: string | ArrayBuffer | null = reader.result;
 
         if (typeof optionList === 'string') {
           localStorage.setItem('OptionsListDMT', optionList);
