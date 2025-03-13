@@ -1,21 +1,21 @@
 import createElement from '../create/create_element';
+import createDialogElement from '../create/create_dialog';
+import createTextAreaElement from '../create/create_textarea';
 import createButton from '../create/create_button';
 import clickBtnCancel from '../functional/click_button.ts/click_btn_cancel';
 import clickBtnConfirm from '../functional/click_button.ts/click_btn_confirm';
 
 function createModalWindowPasteList(): HTMLDialogElement {
-  const dialogWindow: HTMLDialogElement = createElement({
-    tag: 'dialog',
+  const dialogWindow: HTMLDialogElement = createDialogElement({
     classes: ['modal-window'],
-  }) as HTMLDialogElement;
+  });
 
   const form: HTMLElement = createElement({ tag: 'form', classes: ['form'], parent: dialogWindow });
-  const textField: HTMLTextAreaElement = createElement({
-    tag: 'textarea',
+  const textField: HTMLTextAreaElement = createTextAreaElement({
     classes: ['form-field'],
+    row: '8',
     parent: form,
-  }) as HTMLTextAreaElement;
-  textField.setAttribute('rows', '8');
+  });
 
   const placeholder: string = `Paste a list of new options in a CSV-like format:
 
@@ -57,7 +57,8 @@ Title with number 1,5   -> | Title with number 1   | 5 |`;
   });
 
   document.addEventListener('click', (event: MouseEvent) => {
-    if ((event.target as HTMLElement).classList.contains('modal-window')) {
+    const element: HTMLElement = event.target as HTMLElement;
+    if (element.classList.contains('modal-window')) {
       clickBtnCancel(dialogWindow);
     }
   });
