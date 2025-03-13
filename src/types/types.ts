@@ -26,6 +26,7 @@ export interface ICreateInput {
   required?: string;
   placeholder?: string;
   minLength?: string;
+  min?: string;
   pattern?: string;
   addRules?: string;
   onInput?: () => void;
@@ -45,4 +46,25 @@ export type TEditOptionData = {
 
 export interface ISound {
   sound: boolean;
+}
+
+export interface ICreateCanvasElement {
+  classes?: string[];
+  id?: string;
+  width?: number;
+  height?: number;
+  parent?: HTMLElement;
+}
+
+export interface ICreateDialogElement {
+  classes?: string[];
+  id?: string;
+  parent?: HTMLElement;
+}
+
+export interface ICreateTextAreaElement {
+  classes?: string[];
+  id?: string;
+  row?: string;
+  parent?: HTMLElement;
 }
