@@ -3,7 +3,7 @@ import { ICreateElement } from '../types/types';
 function createElement(options: ICreateElement): HTMLElement {
   const { tag = 'div', classes = [], id, text, parent } = options;
 
-  const element = document.createElement(tag);
+  const element: HTMLElement = document.createElement(tag);
 
   if (classes.length > 0) {
     element.classList.add(...classes);
