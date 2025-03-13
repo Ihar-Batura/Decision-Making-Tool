@@ -1,12 +1,12 @@
 import createElement from '../create/create_element';
+import createDialogElement from '../create/create_dialog';
 import createButton from '../create/create_button';
 import clickBtnCancel from '../functional/click_button.ts/click_btn_cancel';
 
 function createModalWindowValidOptions(): HTMLDialogElement {
-  const dialogWindow: HTMLDialogElement = createElement({
-    tag: 'dialog',
+  const dialogWindow: HTMLDialogElement = createDialogElement({
     classes: ['modal-window', 'modal-valid-options'],
-  }) as HTMLDialogElement;
+  });
 
   const container: HTMLElement = createElement({
     tag: 'div',
@@ -14,7 +14,7 @@ function createModalWindowValidOptions(): HTMLDialogElement {
     parent: dialogWindow,
   });
 
-  const message: HTMLElement = createElement({
+  createElement({
     tag: 'div',
     classes: ['modal-valid-options-message'],
     text: `Please add at least 2 valid options. An option is considered valid if its title is not empty and its weight is greater than 0`,
@@ -39,7 +39,8 @@ function createModalWindowValidOptions(): HTMLDialogElement {
   });
 
   document.addEventListener('click', (event: MouseEvent) => {
-    if ((event.target as HTMLElement).classList.contains('modal-window')) {
+    const element: HTMLElement = event.target as HTMLElement;
+    if (element.classList.contains('modal-window')) {
       clickBtnCancel(dialogWindow);
     }
   });
