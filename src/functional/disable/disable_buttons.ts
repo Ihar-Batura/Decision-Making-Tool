@@ -1,6 +1,7 @@
 import { IDisabledButtons } from '../../types/types';
+import playSound from '../sound/play_sound';
 
-function disabledButtons({
+function disableButtons({
   btnBack: btnBack,
   btnSound: btnSound,
   btnStart: btnStart,
@@ -20,7 +21,8 @@ function disabledButtons({
     btnStart.removeAttribute('disabled');
     timerInput.removeAttribute('disabled');
     timerImg.removeAttribute('disabled');
+    playSound();
   }, timerTime * 1000);
 }
 
-export default disabledButtons;
+export default disableButtons;

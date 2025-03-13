@@ -6,7 +6,7 @@ import clickBtnSound from '../functional/click_button.ts/click_btn_sound';
 import checkSoundValueInLS from '../functional/local_storage/check_sound_value_in_LS';
 import isSoundMute from '../functional/sound/is_sound_mute';
 import clickBtnStart from '../functional/click_button.ts/click_btn_start';
-import disabledButtons from '../functional/disable/disable_buttons';
+import disableButtons from '../functional/disable/disable_buttons';
 
 function createButtonsForDecisionPicker(): HTMLElement {
   const btnsContainer: HTMLElement = createElement({
@@ -71,7 +71,7 @@ function createButtonsForDecisionPicker(): HTMLElement {
     const timerTime: number = +timerInput.value;
     clickBtnStart(timerTime, hint);
     if (timerTime >= 5) {
-      disabledButtons({
+      disableButtons({
         btnBack: btnBack,
         btnSound: btnSound,
         btnStart: btnStart,
