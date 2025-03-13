@@ -15,7 +15,7 @@ function createOption(options: IOption): HTMLElement {
     text: id,
   });
 
-  const elementTitle = createInput({
+  const elementTitle: HTMLInputElement = createInput({
     type: 'text',
     classes: ['option-container-title'],
     value: title,
@@ -28,7 +28,7 @@ function createOption(options: IOption): HTMLElement {
       }),
   });
 
-  const elementWeight = createInput({
+  const elementWeight: HTMLInputElement = createInput({
     type: 'number',
     classes: ['option-container-weight'],
     value: weight,
@@ -41,7 +41,7 @@ function createOption(options: IOption): HTMLElement {
       }),
   });
 
-  const elementButton = createButton({
+  const elementButton: HTMLButtonElement = createButton({
     classes: ['btn', 'option-container-btn'],
     text: 'Delete',
     onClick: () => clickBtnDeleteOption(elementId),
