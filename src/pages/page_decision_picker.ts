@@ -8,8 +8,8 @@ function createPageDecisionPicker(): HTMLElement {
     classes: ['wrapper', 'main-wrapper'],
   });
 
-  const btnsForDecisionPicker = createButtonsForDecisionPicker();
-  const option = createElement({
+  const btnsForDecisionPicker: HTMLElement = createButtonsForDecisionPicker();
+  const option: HTMLElement = createElement({
     tag: 'div',
     classes: ['picked-option'],
     text: 'PRESS START BUTTON',
