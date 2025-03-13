@@ -14,11 +14,28 @@
   transition: all 0.5s ease-out;
 
   &:hover {
-    filter: brightness(1.15);
+    background-color: $color-btn-base-hover;
   }
 
   &:active {
     filter: brightness(1.05);
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.7;
+
+    &:hover {
+      background-color: $color-btn-base;
+    }
+
+    &:active {
+      filter: brightness(1);
+    }
+  }
+
+  &.option-container-btn:hover {
+    background-color: $color-bkg-btn-hover;
   }
 }
 
@@ -71,7 +88,17 @@
 
   &.mute {
     background: url('./sound_off.svg') no-repeat center center / contain;
-    background-color: $color-base;
+    background-color: $color-btn-base;
+
+    &:hover {
+      background-color: $color-btn-base-hover;
+    }
+
+    &[disabled] {
+      &:hover {
+        background-color: $color-btn-base;
+      }
+    }
   }
 }
 

@@ -15,6 +15,10 @@
 
   background: url('./timer_icon.svg') no-repeat center center / contain;
   background-color: $color-btn-base;
+
+  &[disabled] {
+    opacity: 0.7;
+  }
 }
 
 .timer-input {
@@ -25,6 +29,10 @@
   border-bottom-right-radius: 4px;
 
   background-color: $color-bkg-input;
+
+  &[disabled] {
+    opacity: 0.7;
+  }
 }
 
 .timer-input:invalid {
