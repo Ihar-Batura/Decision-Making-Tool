@@ -68,3 +68,11 @@ export interface ICreateTextAreaElement {
   row?: string;
   parent?: HTMLElement;
 }
+export interface IDisabledButtons {
+  btnBack: HTMLButtonElement;
+  btnSound: HTMLButtonElement;
+  btnStart: HTMLButtonElement;
+  timerInput: HTMLInputElement;
+  timerImg: HTMLElement;
+  timerTime: number;
+}
