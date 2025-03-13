@@ -3,7 +3,7 @@ import saveSoundValueToLS from './save_sound_value_to_LS';
 import { ISound } from '../../types/types';
 
 function checkSoundValueInLS(): void {
-  const value = getSoundValueFromLS();
+  const value: ISound | null = getSoundValueFromLS();
   if (value === null) {
     const soundValue: ISound = {
       sound: true,
