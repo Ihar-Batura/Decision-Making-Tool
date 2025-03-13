@@ -8,7 +8,7 @@ function addNewOption(title: string = '', weight: string = ''): void {
     const optionsList: IOption[] = options.list;
     const optionsLastId: number = options.lastId;
     const newLastId: number = optionsLastId + 1;
-    const newOption = {
+    const newOption: IOption = {
       id: `#${newLastId}`,
       title: title,
       weight: `${typeof +weight === 'number' ? weight : ''}`,
