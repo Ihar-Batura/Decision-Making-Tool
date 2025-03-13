@@ -3,19 +3,19 @@ import { ICreateDialogElement } from '../types/types';
 function createDialogElement(options: ICreateDialogElement): HTMLDialogElement {
   const { classes = [], id, parent } = options;
 
-  const element = document.createElement('dialog');
+  const dialog: HTMLDialogElement = document.createElement('dialog');
 
   if (classes.length > 0) {
-    element.classList.add(...classes);
+    dialog.classList.add(...classes);
   }
   if (id) {
-    element.id = id;
+    dialog.id = id;
   }
   if (parent != null) {
-    parent.append(element);
+    parent.append(dialog);
   }
 
-  return element;
+  return dialog;
 }
 
 export default createDialogElement;
