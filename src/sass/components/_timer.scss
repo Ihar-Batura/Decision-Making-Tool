@@ -14,7 +14,7 @@
   border-bottom-left-radius: 4px;
 
   background: url('./timer_icon.svg') no-repeat center center / contain;
-  background-color: $color-base;
+  background-color: $color-btn-base;
 }
 
 .timer-input {
@@ -25,6 +25,10 @@
   border-bottom-right-radius: 4px;
 
   background-color: $color-bkg-input;
+}
+
+.timer-input:invalid {
+  background-color: red;
 }
 
 .timer-input::-webkit-outer-spin-button,

@@ -37,8 +37,11 @@ dialog[open]::backdrop {
 
 .form-field {
   resize: none;
+
   width: 100%;
+  height: 210px;
   padding: 8px;
+
   background-color: $color-bkg-input;
 }
 

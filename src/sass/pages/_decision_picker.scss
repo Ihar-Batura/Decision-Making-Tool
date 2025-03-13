@@ -1,0 +1,13 @@
+.hint {
+  user-select: none;
+
+  width: 100%;
+
+  font-size: 12px;
+  color: transparent;
+  text-align: center;
+
+  &.show {
+    color: red;
+  }
+}

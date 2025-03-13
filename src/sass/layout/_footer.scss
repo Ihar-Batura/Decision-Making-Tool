@@ -23,6 +23,6 @@
   transition: all 0.4s ease-out;
 
   &:hover {
-    text-shadow: 0 2px 2px $color-base;
+    color: $color-bkg-input;
   }
 }
