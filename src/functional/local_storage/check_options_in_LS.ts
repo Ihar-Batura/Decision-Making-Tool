@@ -3,7 +3,7 @@ import saveOptionsListToLS from './save_options_list_to_LS';
 import { IOptions } from '../../types/types';
 
 function checkOptionsInLS(): void {
-  const options = getOptionsListFromLS();
+  const options: IOptions | null = getOptionsListFromLS();
   if (options === null) {
     const baseOption: IOptions = {
       list: [{ id: '#1', title: '', weight: '' }],
