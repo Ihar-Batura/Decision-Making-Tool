@@ -8,8 +8,8 @@ function createPageListOfOptions(): HTMLElement {
     classes: ['wrapper', 'main-wrapper'],
   });
 
-  const optionsList = createListOfOptions();
-  const btnsForOptionsList = createButtonsForListOfOptions();
+  const optionsList: HTMLElement = createListOfOptions();
+  const btnsForOptionsList: HTMLElement = createButtonsForListOfOptions();
 
   mainWrapper.append(optionsList, btnsForOptionsList);
 
