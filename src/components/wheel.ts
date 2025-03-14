@@ -31,7 +31,10 @@ function createWheel(
     if (btnStart !== null && input !== null) {
       btnStart.addEventListener('click', (event) => {
         event.preventDefault();
-        animateWheel(ctx, mixArrOptions, arrOptionColors, input, pickedOption);
+        const time: number = +input.value;
+        if (time >= 5) {
+          animateWheel(ctx, mixArrOptions, arrOptionColors, input, pickedOption);
+        }
       });
     }
   }
