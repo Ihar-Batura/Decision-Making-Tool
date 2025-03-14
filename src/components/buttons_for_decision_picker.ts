@@ -23,6 +23,7 @@ function createButtonsForDecisionPicker(): HTMLElement {
 
   const btnBack: HTMLButtonElement = createButton({
     classes: ['btn', 'btn-back'],
+    name: 'Back',
     onClick: () => clickBtnBack(),
     parent: btnsContainer,
   });
@@ -52,6 +53,7 @@ function createButtonsForDecisionPicker(): HTMLElement {
 
   const btnSound: HTMLButtonElement = createButton({
     classes: ['btn', 'btn-sound'],
+    name: 'Turn Sound',
     onClick: () => clickBtnSound(btnSound),
     parent: btnsContainer,
   });
