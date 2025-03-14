@@ -20,7 +20,7 @@ function drawText(
   ctx.shadowOffsetX = 5;
   ctx.shadowOffsetY = 5;
 
-  ctx.fillText(optionTitle, 70, 0);
+  ctx.fillText(optionTitle, 90, 5);
   ctx.restore();
 }
 
