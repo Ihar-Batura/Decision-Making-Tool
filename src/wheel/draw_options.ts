@@ -2,6 +2,7 @@ import { center, bigCircleRadius, lineWidth } from './wheel_variables';
 import findValidOptions from '../functional/work_with_options/find_valid_options';
 import { IOption } from '../types/types';
 import getRandomHexColor from '../functional/random/get_random_hex_color';
+import drawText from './draw_text';
 
 function drawOptions(ctx: CanvasRenderingContext2D): void {
   const arrOptions: IOption[] = findValidOptions();
@@ -38,7 +39,14 @@ function drawOptions(ctx: CanvasRenderingContext2D): void {
     ctx.lineWidth = lineWidth;
     ctx.strokeStyle = '#dad5ef';
     ctx.stroke();
-    console.log('draw');
+
+    // Check corner size and draw option title
+    const cornerSize: number = endAngle - startAngle;
+
+    if (cornerSize >= 0.185) {
+      const title: string = arrOptions[i].title;
+      drawText(ctx, title, startAngle, endAngle);
+    }
   }
 }
 
