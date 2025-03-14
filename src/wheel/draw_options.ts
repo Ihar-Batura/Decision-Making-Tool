@@ -1,11 +1,15 @@
 import { center, bigCircleRadius, lineWidth } from './wheel_variables';
-import findValidOptions from '../functional/work_with_options/find_valid_options';
 import { IOption } from '../types/types';
-import getRandomHexColor from '../functional/random/get_random_hex_color';
 import drawText from './draw_text';
 
-function drawOptions(ctx: CanvasRenderingContext2D): void {
-  const arrOptions: IOption[] = findValidOptions();
+function drawOptions(
+  ctx: CanvasRenderingContext2D,
+  mixArrOptions: IOption[],
+  arrOptionColors: string[],
+  offsetAngle: number,
+  pickedOption?: HTMLElement
+): void {
+  const arrOptions: IOption[] = mixArrOptions;
 
   let allWeight: number = 0;
 
@@ -22,8 +26,8 @@ function drawOptions(ctx: CanvasRenderingContext2D): void {
 
     endPercent += optionPercent;
 
-    const startAngle: number = Math.PI * 2 * startPercent;
-    const endAngle: number = Math.PI * 2 * endPercent;
+    const startAngle: number = Math.PI * 2 * startPercent + offsetAngle;
+    const endAngle: number = Math.PI * 2 * endPercent + offsetAngle;
 
     startPercent = endPercent;
 
@@ -31,7 +35,7 @@ function drawOptions(ctx: CanvasRenderingContext2D): void {
     ctx.moveTo(center.x, center.y);
     ctx.arc(center.x, center.y, bigCircleRadius - lineWidth, startAngle, endAngle);
 
-    const color: string = getRandomHexColor();
+    const color: string = arrOptionColors[i];
     ctx.fillStyle = color;
     ctx.fill();
     ctx.closePath();
@@ -46,6 +50,15 @@ function drawOptions(ctx: CanvasRenderingContext2D): void {
     if (cornerSize >= 0.185) {
       const title: string = arrOptions[i].title;
       drawText(ctx, title, startAngle, endAngle);
+    }
+
+    if (pickedOption) {
+      const circle: number = 6.283185307179586;
+      const winPosition: number = 4.71238898038469;
+
+      if (startAngle % circle <= winPosition && endAngle % circle >= winPosition) {
+        pickedOption.textContent = arrOptions[i].title;
+      }
     }
   }
 }
