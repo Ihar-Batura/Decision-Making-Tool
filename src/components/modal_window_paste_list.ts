@@ -57,7 +57,11 @@ Title with number 1,5   -> | Title with number 1   | 5 |`;
   });
 
   document.addEventListener('click', (event: MouseEvent) => {
-    const element: HTMLElement = event.target as HTMLElement;
+    const target: EventTarget | null = event.target;
+    if (!(target instanceof HTMLElement)) {
+      return;
+    }
+    const element: HTMLElement = target;
     if (element.classList.contains('modal-window')) {
       clickBtnCancel(dialogWindow);
     }
