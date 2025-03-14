@@ -35,6 +35,7 @@ export interface ICreateInput {
 
 export interface ICreateButton extends ICreateElement {
   disabled?: boolean;
+  name?: string;
   onClick?: () => void;
 }
 

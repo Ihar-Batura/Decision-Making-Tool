@@ -1,7 +1,7 @@
 import { ICreateButton } from '../types/types';
 
 function createButton(options: ICreateButton): HTMLButtonElement {
-  const { classes = [], id, text, disabled, onClick, parent } = options;
+  const { classes = [], id, text, disabled, name, onClick, parent } = options;
 
   const button: HTMLButtonElement = document.createElement('button');
 
@@ -16,6 +16,9 @@ function createButton(options: ICreateButton): HTMLButtonElement {
   }
   if (disabled) {
     button.setAttribute('disabled', `${disabled}`);
+  }
+  if (name) {
+    button.setAttribute('name', name);
   }
   if (onClick) {
     button.onclick = onClick;
