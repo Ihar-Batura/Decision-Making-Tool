@@ -6,11 +6,13 @@ function drawText(
   startAngle: number,
   endAngle: number
 ): void {
+  const optionTitle: string = title.length < 12 ? title : `${title.slice(0, 12)}...`;
+
   ctx.save();
   ctx.translate(center.x, center.y);
   ctx.rotate((startAngle + endAngle) / 2);
   ctx.textAlign = 'start';
-  ctx.font = '18px Merienda';
+  ctx.font = '16px Merienda';
   ctx.fillStyle = '#fafcfd';
 
   ctx.shadowColor = 'black';
@@ -18,7 +20,7 @@ function drawText(
   ctx.shadowOffsetX = 5;
   ctx.shadowOffsetY = 5;
 
-  ctx.fillText(title, 70, 0);
+  ctx.fillText(optionTitle, 70, 0);
   ctx.restore();
 }
 
