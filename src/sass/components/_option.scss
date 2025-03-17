@@ -1,0 +1,48 @@
+@use '../abstracts/variables' as *;
+
+.list-options {
+  display: flex;
+  flex-direction: column;
+  gap: 14px 0;
+
+  width: 100%;
+  max-width: 650px;
+}
+
+.option-container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  padding: 6px 12px;
+  border-radius: 4px;
+
+  background-color: $color-bkg-option;
+}
+
+.option-container-id {
+  min-width: 30px;
+}
+
+.option-container-title,
+.option-container-weight {
+  width: 100%;
+  padding: 4px;
+  padding-left: 8px;
+  border: none;
+  border-radius: 4px;
+
+  font-weight: 600;
+
+  background-color: $color-bkg-input;
+}
+
+.option-container-weight {
+  max-width: 70px;
+}
+
+.option-container-weight::-webkit-outer-spin-button,
+.option-container-weight::-webkit-inner-spin-button {
+  margin: 0;
+  appearance: none;
+}

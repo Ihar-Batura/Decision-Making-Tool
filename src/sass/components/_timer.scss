@@ -1,0 +1,46 @@
+@use '../abstracts/variables' as *;
+
+.timer-container {
+  display: flex;
+  width: calc(58% - 6px);
+  height: 32px;
+  border-radius: 4px;
+}
+
+.timer-img {
+  width: 30%;
+  height: 100%;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+
+  background: url('./timer_icon.svg') no-repeat center center / contain;
+  background-color: $color-btn-base;
+
+  &[disabled] {
+    opacity: 0.7;
+  }
+}
+
+.timer-input {
+  width: 70%;
+  padding: 4px 12px;
+  border: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+
+  background-color: $color-bkg-input;
+
+  &[disabled] {
+    opacity: 0.7;
+  }
+}
+
+.timer-input:invalid {
+  background-color: red;
+}
+
+.timer-input::-webkit-outer-spin-button,
+.timer-input::-webkit-inner-spin-button {
+  margin: 0;
+  appearance: none;
+}
