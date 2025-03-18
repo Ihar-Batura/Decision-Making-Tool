@@ -22,6 +22,10 @@ function animateWheel(
       speed += step;
       const offsetAngle: number = speed;
 
+      // Очищаем все пространство холста
+      ctx.clearRect(0, 0, 512, 512);
+
+      // Рисуем новый круг
       drawBigCircle(ctx);
       drawOptions(ctx, mixArrOptions, arrOptionColors, offsetAngle, pickedOption);
       drawSmallCircle(ctx);
